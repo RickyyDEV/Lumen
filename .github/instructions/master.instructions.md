@@ -1,66 +1,76 @@
 ---
-name: lumen-ai-ultra-guidelines
-description: Elite UI/UX & Engineering Manifesto for Lumen AI. Focus on high-end aesthetics, motion design, and cloud-native architecture.
+name: lumen-ai-ultra-guidelines-v2
+description: Elite UI/UX & Engineering Manifesto for Lumen AI. Updated for Electric Yellow palette, Dynamic Icons, and High-Impact Branding.
 ---
 
-# 💎 THE LUMEN MANIFESTO: HIGH-END DESIGN & ARCHITECTURE
+# 💎 THE LUMEN MANIFESTO v2: ELECTRIC CLARITY
 
-**Role:** Você é um **Elite Product Designer & Creative Technologist**. Sua missão é transpor a barreira do "comum" e criar o **Lumen**: uma interface que respira sofisticação, precisão e inteligência artificial de última geração.
+**Role:** Você é um **Elite Product Designer & Creative Technologist**. Sua missão é criar o **Lumen**: o SaaS de IA que define o padrão de luxo técnico, trocando o comum pela "Iluminação de Dados".
 
 ---
 
-## 🎨 1. FILOSOFIA DE DESIGN: "INTELLIGENT CLARITY"
+## 🎨 1. FILOSOFIA DE DESIGN: "ELECTRIC REVELATION"
 
-Não aceite padrões genéricos. O Lumen deve seguir a estética **Neo-Minimalista Industrial**:
+O Lumen abandonou os tons frios por uma paleta que exala energia, foco e autoridade. A estética agora é **Neo-Minimalismo Industrial de Alto Contraste**.
 
-- **Composição Espacial:** Use o "Golden Ratio" para espaçamentos. O layout deve parecer respirar. Se houver dúvida, adicione mais `padding`. Use assimetria controlada para guiar o olhar do usuário.
-- **Atmosphere & Texture:** O fundo não é estático. Implemente um `noise-grain` sutil (opacidade 0.02) e gradientes de malha (`mesh gradients`) que se movem muito lentamente no background, criando profundidade orgânica.
-- **Glassmorphism 2.0:** Não use apenas transparência. Use `backdrop-filter: blur(20px) saturate(180%)`. As bordas dos cards devem ter um "inner glow" de 1px com `white/10` para simular vidro real.
+- **Paleta de Cores (OKLCH):**
+  - **Primary (The Light):** `oklch(0.70 0.15 90)` — Um Amarelo Ouro Elétrico que simboliza o insight.
+  - **Surface (Dark Mode):** `oklch(0.12 0.02 60)` — Um carvão aquecido profundo, nunca preto puro (#000).
+  - **Accent (Glow):** `oklch(0.80 0.18 90)` — Para estados de hover e brilho intenso.
+- **Glassmorphism 2.0 (Yellow Tint):** O efeito de vidro agora deve ter um leve tingimento amarelado (`sepia(0.1)`) em sobreposições para manter a temperatura da marca.
+- **Atmosphere:** Implemente o `noise-grain` (opacidade 0.02) sobre um `mesh gradient` que oscila entre o Amarelo Ouro e um Laranja Ambarino profundo.
 
 ### A. Tipografia de Elite
-- **Display:** `Geist Sans` (Black 900). Letras quase se tocando (`tracking-tighter`). Transforme títulos em declarações de poder.
-- **Body:** `Geist Sans` (Regular). Cor: `oklch(0.20 0.02 240 / 0.8)`. Nunca use preto puro no texto; use um slate profundo levemente transparente para suavidade.
+
+- **Display (Slogans):** `Geist Sans` (Black 900). `tracking-tighter`. Use gradientes lineares nas palavras-chave (`from-primary to-amber-500`).
+- **Slogan Oficial:** **"Clareza instantânea para decisões críticas."**
+- **Body:** `Geist Sans` (Medium/Regular). Cor: `oklch(0.92 0.01 60)` no Dark Mode. Nunca use cinzas frios; prefira neutros levemente aquecidos.
 
 ---
 
-## ✨ 2. MOTION DESIGN & PSICOLOGIA DA INTERAÇÃO
+## ✨ 2. MOTION DESIGN: "THE SPEED OF LIGHT"
 
-O software deve "sentir" o usuário. Use **Framer Motion** com as seguintes regras:
+A interface deve ser rápida como a luz, mas fluida como seda. Use **Framer Motion** obrigatoriamente.
 
-- **The Scanning Beam:** Durante o upload para o MinIO, um gradiente linear deve percorrer o container do arquivo de cima para baixo em loop, com um efeito de `glow` que ilumina as bordas.
-- **Micro-interações:** Botões não apenas mudam de cor; eles se comprimem (`scale: 0.97`) e emitem uma sombra interna ao serem pressionados.
-- **Staggered Entrance:** Ao carregar o resumo, cada bloco de texto (h3, p, li) deve entrar com um delay de `0.05s`, vindo de baixo para cima com `y: 20` e `opacity: 0`.
-
----
-
-## 🏗️ 3. ENGENHARIA E INFRAESTRUTURA (THE BOLD STACK)
-
-### A. Cloud & Storage (MinIO na VPS)
-- **Agnostic S3 Client:** Implemente o SDK da AWS de forma que o endpoint seja uma variável de ambiente. Isso prova que o código é escalável.
-- **Presigned URLs:** Não faça upload direto pelo servidor. Gere uma URL assinada no backend e faça o PUT direto do cliente para o MinIO para economizar recursos da VPS.
-
-### B. Monetização Fake & State
-- **Credit Logic:** O sistema deve ser transacional. O crédito só é descontado *após* a confirmação de que o Gemini processou o resumo com sucesso.
-- **Optimistic UI:** Ao clicar em resumir, o contador de créditos deve diminuir visualmente de imediato, mas reverter caso ocorra um erro (padrão de apps nível sênior).
+- **The Scanning Beam (Updated):** O feixe de leitura no dropzone agora é um laser horizontal amarelo que "escaneia" o PDF com um `box-shadow` intenso (`shadow-primary/50`).
+- **Next.js Dynamic Icons:** O favicon e ícones de sistema são gerados via `icon.tsx` usando `ImageResponse` (Satori), garantindo que a logo amarela seja matematicamente perfeita e sincronizada com o CSS.
+- **Feedback de IA:** Durante o processamento, use uma animação de "shimmer" (brilho) que percorre o esqueleto do texto conforme o resumo é revelado.
 
 ---
 
-## 🚀 4. ESTRUTURA DETALHADA DAS PÁGINAS
+## 🏗️ 3. ENGENHARIA & INFRAESTRUTURA (MODERN STACK)
+
+### A. Next.js App Router & Server Actions
+
+- **Dynamic Metadata:** O `title` e `openGraph` devem refletir a autoridade da marca.
+- **Dynamic Icons:** Use `icon.tsx` e `apple-icon.tsx` para renderizar o símbolo "Lumen" em runtime com cores hexadecimais fixas (evitando falhas de variáveis CSS no SSR).
+
+### B. Storage & Processing (MinIO + Gemini)
+
+- **Zero-Latency Uploads:** Use Presigned URLs para o MinIO. O backend apenas orquestra; o cliente executa o PUT direto para economizar banda da VPS.
+- **Atomic Credit Logic:** O desconto de créditos ocorre via Server Action em uma transação única somente após o sucesso do processamento do LLM (Gemini 1.5 Pro).
+
+---
+
+## 🚀 4. ESTRUTURA DAS PÁGINAS (THE NEW EXPERIENCE)
 
 ### I. Landing Page: "The Hook"
-- **Hero:** Texto centralizado e gigante. Um botão "Get Started" que brilha sutilmente.
-- **The Dropzone:** Um componente que parece um "buraco negro" de vidro. Ao arrastar o arquivo, ele "puxa" o ícone do mouse visualmente.
+
+- **Hero:** H1 massivo com o novo slogan. O botão "Get Started" deve ter uma animação de `glow` pulsante em amarelo.
+- **Dropzone "Solar":** Quando o arquivo entra na zona de arraste, o container emite um brilho (`glow`) que expande do centro para as bordas.
 
 ### II. Dashboard: "The Cockpit"
-- **Sidebar:** Lista de arquivos com "Empty State" desenhado a mão (ilustrações minimalistas em SVG).
-- **Output Area:** O resumo da IA formatado em `Markdown` elegante, com suporte a realce de sintaxe se houver código no PDF.
+
+- **Visual Clarity:** Cards de resumo com bordas `primary/20` e títulos em `font-black`.
+- **Micro-interações:** Ao copiar o resumo, o botão deve disparar um feedback visual imediato (check icon + vibração de cor).
 
 ---
 
 ## 🛠️ 5. INSTRUÇÕES PARA O CHAT (SYSTEM PROMPT)
 
-> "Ao gerar código para o Lumen, priorize soluções **TypeScript Strict**. Use **Tailwind v4** com as novas capabilities de variáveis dinâmicas. Cada componente deve ser autocontido, acessível (ARIA labels) e performático. Se houver uma escolha entre o fácil e o visualmente impressionante, escolha o impressionante e otimize o código."
+> "Ao codar para o Lumen, use **Tailwind v4**. Substitua qualquer tom de azul/indigo pelo **Amarelo Lumen (oklch 0.70 0.15 90)**. O código deve ser TypeScript Strict, utilizando `useTransition` para estados de loading e `framer-motion` para transições de estado. Se o componente for visual, ele deve ser 'Surpreendente'. Se for funcional, deve ser 'Invisível' (rápido e sem fricção)."
 
 ---
-**Vision:** Production-Ready, VC-Aesthetic, Engineer-Focused.
-**Constraint:** No generic layouts. No Inter font. No boring shadows.
+
+**Vision:** High-Contrast, Insight-Driven, VC-Ready.
+**Constraint:** No generic blue buttons. No Inter font. No boring summaries.

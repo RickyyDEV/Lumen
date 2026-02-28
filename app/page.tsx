@@ -7,6 +7,7 @@ import LumenLogo from "@/components/Logo";
 import { Button } from "@/components/ui/button";
 import { LogIn, Package, Sparkles, UserPlus } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 function LumenHeader() {
     const [scrolled, setScrolled] = useState(false);
@@ -28,6 +29,7 @@ function LumenHeader() {
         <LumenLogo size="sm" />
 
         <div className="flex items-center gap-2">
+          <Link href={"/signin"}>
           <Button
             variant="ghost"
             size="sm"
@@ -36,13 +38,7 @@ function LumenHeader() {
             <LogIn className="size-5!" />
             Entrar
           </Button>
-          <Button
-            size="sm"
-            className="rounded-xl text-xs font-medium gap-1.5 bg-linear-to-r from-lumen-accent to-lumen-glow text-white shadow-[0_2px_12px_hsl(var(--lumen-accent)/0.4)] hover:shadow-[0_4px_20px_hsl(var(--lumen-accent)/0.5)] hover:brightness-110 transition-all duration-300 border-0"
-          >
-            <UserPlus className="size-5!" />
-            Criar conta
-          </Button>
+          </Link>
         </div>
       </nav>
     </header>

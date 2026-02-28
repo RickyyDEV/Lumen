@@ -4,5 +4,5 @@ import { env } from '../env';
 
 export const authClient = createAuthClient({
   plugins: [nextCookies()],
-  baseUrl: env.BETTER_AUTH_URL,
+  baseUrl: env.NEXT_PUBLIC_BETTER_AUTH_URL,
 });
