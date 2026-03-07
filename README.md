@@ -1,6 +1,6 @@
 # 🌟 Lumen
 
-**Lumen** é um aplicativo web elegante, alimentado por IA, para sumarização de documentos, construído com Next.js, Tailwind CSS e Prisma.  
+**Lumen** é um aplicativo web, alimentado por IA, para sumarização de documentos, construído com Next.js, Tailwind CSS e Prisma.  
 Projetado para clareza e velocidade, converte PDFs extensos em insights acionáveis com uma interface mínima e segurança de nível empresarial.
 
 ---
@@ -39,8 +39,8 @@ Essas tecnologias foram escolhidas para oferecer escalabilidade e uma experiênc
 
 1. Clone o repositório e instale dependências:
    ```bash
-   git clone <repo>
-   cd lumen
+   git clone https://github.com/RickyyDEV/Lumen
+   cd Lumen
    npm install         # ou yarn / bun
    ```
 2. Copie as variáveis de ambiente e configure sua URL de autenticação:
@@ -58,26 +58,6 @@ Para preparar o banco de dados e inspecionar dados use o Prisma:
 npx prisma migrate dev --name init
 npx prisma studio
 ```
----
-
-## 🧩 Componentes principais
-
-Alguns dos componentes centrais que compõem a interface:
-
-- **`AppSidebar`** e **`AppSidebarSkeleton`** – navegação lateral responsiva com estados de carregamento.
-- **`DashboardLayout`** – layout global que agrupa cabeçalho, barra lateral e área principal com busca integrada.
-- **`SignInPage`** – página de login com animações e suporte Google.
-- **`Dashboard`** – tela principal que mostra o PDF selecionado e o resumo gerado.
-- **`authClient`** – cliente de autenticação usado em hooks para verificar sessão e realizar login.
-
----
-
-## ✅ Destaques de UX
-
-- Sidebar mantém o logotipo visível mesmo no estado compacto.
-- Skeletons evitam saltos de layout enquanto a sessão do usuário carrega.
-- Botões de copiar/exportar fornecem ações diretas e intuitivas.
-- Gradientes de cor e movimentos sutis tornam a interface agradável.
 
 ---
 
