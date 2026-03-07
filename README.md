@@ -5,89 +5,104 @@ Designed for clarity and speed, it transforms large PDFs into actionable insight
 
 ---
 
-## 🚀 Features
+## 🚀 Funcionalidades
 
-- **Google OAuth authentication**: secure, password‑less login.
-- **Dashboard with PDF history**: browse past summaries.
-- **Instant PDF previews** (placeholder).
-- **Smart summary panel** with copy/export buttons.
-- **Responsive, collapsible sidebar** with animation and skeleton loading.
-- **Beautiful, motion‑rich sign‑in page** (or simplified variant).
-
----
-
-## 🧱 Tech Stack
-
-- **Next.js (App Router)** – server/client components
-- **TypeScript** – full type safety
-- **Tailwind CSS + shadcn/ui primitives** – utility‑first styling
-- **Framer Motion & Lucide‑React** – animated UI and icons
-- **Better Auth (authClient)** – user session management
-- **Prisma** – database ORM (schema in `app/(database)`)
-- **React hooks & Context** – custom sidebar provider, theme utilities
+- **Autenticação via Google OAuth**: login seguro sem necessidade de senha.
+- **Histórico de PDFs**: visualização e acesso rápido aos resumos gerados.
+- **Visualização de PDF** (placeholder) integrada ao dashboard.
+- **Painel de resumo inteligente** com opções de copiar e exportar o texto.
+- **Barra lateral responsiva e colapsável** com animações suaves e estado skeleton durante o carregamento.
+- **Página de login estilosa** com animações e versão simplificada alternativa.
 
 ---
 
-## 🛠️ Getting Started
+## 🧱 Pilha Tecnológica
 
-```bash
-git clone <repo>
-cd lumen
-npm install           # or yarn/bun
-cp .env.example .env  # configure NEXT_PUBLIC_BETTER_AUTH_URL, etc.
-npm run dev           # start local dev server
-```
+Este projeto utiliza um conjunto moderno de ferramentas para garantir produtividade, performance e qualidade de código:
 
-Run migrations and open Prisma Studio:
+- **Next.js (App Router)** – framework React focado em SSR/SSG e rotas simplificadas. O App Router permite misturar componentes de servidor e cliente com facilidade.
+- **TypeScript** – linguagem superset de JavaScript que adiciona tipagem estática, evitando muitos erros em tempo de desenvolvimento e melhorando a autocompletação.
+- **Tailwind CSS** – utilitários de CSS em escala, usados em conjunto com classes dinâmicas (via `cn` de `clsx`).
+- **shadcn/ui** – conjunto de componentes acessíveis e estilizados com Tailwind; fornece base para botões, modais, sidebar, etc.
+- **Framer Motion** – biblioteca para animações fluidas e declarativas em React, usada na página de login e transições do layout.
+- **Lucide‑React** – ícones SVG leves, usados por toda a interface para consistência visual.
+- **Better Auth (`authClient`)** – wrapper para autenticação com Google, gerencia sessão via cookies e hooks React.
+- **Prisma** – ORM para PostgreSQL (ou outro banco), tipado automaticamente a partir do esquema; facilitou a configuração do histórico de PDFs.
+- **React Hooks e Context** – padrões de estado local personalizáveis (ex.: `useSidebar` para sidebar colapsável).
+- **Vite / Bun (em scripts)** – utilizado nos scripts de desenvolvimento para velocidade.
 
+Essas tecnologias foram escolhidas para oferecer escalabilidade e uma experiência de desenvolvedor moderna.
+
+---
+
+## 🛠️ Como começar
+
+1. Clone o repositório e instale dependências:
+   ```bash
+   git clone <repo>
+   cd lumen
+   npm install         # ou yarn / bun
+   ```
+2. Copie as variáveis de ambiente e configure sua URL de autenticação:
+   ```bash
+   cp .env.example .env
+   # preencha NEXT_PUBLIC_BETTER_AUTH_URL e outros
+   ```
+3. Inicie o servidor de desenvolvimento:
+   ```bash
+   npm run dev
+   ```
+
+Para preparar o banco de dados e inspecionar dados use o Prisma:
 ```bash
 npx prisma migrate dev --name init
 npx prisma studio
 ```
+---
+
+## 🧩 Componentes principais
+
+Alguns dos componentes centrais que compõem a interface:
+
+- **`AppSidebar`** e **`AppSidebarSkeleton`** – navegação lateral responsiva com estados de carregamento.
+- **`DashboardLayout`** – layout global que agrupa cabeçalho, barra lateral e área principal com busca integrada.
+- **`SignInPage`** – página de login com animações e suporte Google.
+- **`Dashboard`** – tela principal que mostra o PDF selecionado e o resumo gerado.
+- **`authClient`** – cliente de autenticação usado em hooks para verificar sessão e realizar login.
 
 ---
 
-## 🧩 Key Components
+## ✅ Destaques de UX
 
-- `AppSidebar` & `AppSidebarSkeleton` – responsive navigation
-- `DashboardLayout` – layout with search, header, and sidebar provider
-- `SignInPage` – animated login with Google
-- `Dashboard` – main view showing PDF viewer and summary
-- `authClient` – centralized authentication utilities
-
----
-
-## ✅ UX Highlights
-
-- Sidebar keeps logo visible in collapsed state.
-- Skeletons reduce layout shifting while session loads.
-- Clean copy/export actions for summaries.
-- Aesthetic color gradients & motion to delight users.
+- Sidebar mantém o logotipo visível mesmo no estado compacto.
+- Skeletons evitam saltos de layout enquanto a sessão do usuário carrega.
+- Botões de copiar/exportar fornecem ações diretas e intuitivas.
+- Gradientes de cor e movimentos sutis tornam a interface agradável.
 
 ---
 
-## 📁 Project Structure
+## 📁 Estrutura do projeto
 
 ```
 /app
-  /dashboard        # client pages & layout components
-  /sign-in          # login screen(s)
-  /(auth)           # auth client, prisma, API routes
-/components        # UI pieces and utilities
-/hooks             # custom React hooks
-/lib               # helpers
-/prisma            # database config & schema
-/public            # static assets
+  /dashboard        # páginas e componentes do dashboard
+  /sign-in          # telas de login
+  /(auth)           # cliente de autenticação, Prisma, rotas de API
+/components        # componentes UI e utilitários
+/hooks             # hooks React personalizados
+/lib               # funções utilitárias
+/prisma            # configuração e esquema do banco de dados
+/public            # ativos estáticos
 ```
 
 ---
 
-## 💡 Tips & Next Steps
+## 💡 Dicas e próximos passos
 
-- Add real PDF upload/preview functionality.
-- Integrate model APIs for automated summarization.
-- Expand settings, user profiles, and sharing features.
-- Turn animations on/off via user preferences.
+- Implementar envio e pré‑visualização reais de PDFs.
+- Conectar APIs de modelo para gerar resumos automaticamente.
+- Ampliar configurações, perfis de usuário e recursos de compartilhamento.
+- Adicionar preferências para ativar/desativar animações.
 
 ---
 
