@@ -16,6 +16,8 @@
 # next.js
 /.next/
 /out/
+/.github
+skills-lock.json
 
 # production
 /build
