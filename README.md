@@ -86,7 +86,7 @@ npx prisma studio
 
 ---
 
-Seja para documentação interna, pesquisa acadêmica ou conhecimento empresarial, este repositório oferece uma base sólida e bonita.  
-Sinta-se à vontade para dar fork, modificar e inspirar – e aproveite a luz. ✨
+Seja para documentação interna, pesquisa acadêmica ou conhecimento empresarial, este repositório oferece uma base sólida.  
+Sinta-se à vontade para dar fork, modificar e inspirar ✨
 
 ---
