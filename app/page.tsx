@@ -276,7 +276,7 @@ export default function Home() {
             <a href="https://github.com/RickyyDEV" target="_blank" rel="noopener" className="hover:text-primary transition">GitHub</a>
           </nav>
           <div className="flex flex-col md:items-end text-xs text-muted-foreground/80">
-            <span>Lumen © {new Date().getFullYear()} — IA para contratos</span>
+            <span className="text-center mx-auto">Lumen © {new Date().getFullYear()}</span>
             <span>Desenvolvido por <a href="https://github.com/RickyyDEV" target="_blank" rel="noopener" className="text-primary font-semibold hover:underline">Ricardo Marinho</a></span>
           </div>
         </div>
