@@ -3,7 +3,7 @@ import './app/env';
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ['lh3.googleusercontent.com'],
+    remotePatterns: [new URL('https://lh3.googleusercontent.com/**')],
   },
 };
 

@@ -26,6 +26,7 @@ import Link from "next/link";
 import { redirect, usePathname, useRouter } from "next/navigation";
 import { authClient } from "@/app/(auth)/client";
 import { AppSidebarSkeleton } from "./AppSidebarSkeleton";
+import Image from "next/image";
 
 const mainItems = [
   { title: "Dashboard", url: "/dashboard", icon: Home },
@@ -39,7 +40,7 @@ const bottomItems = [
 
 export function AppSidebar() {
   const user = authClient.useSession();
-  const router = useRouter()
+  const router = useRouter();
   const { state, toggleSidebar, isMobile } = useSidebar();
   const collapsed = state === "collapsed";
   const pathName = usePathname();
@@ -147,7 +148,14 @@ export function AppSidebar() {
           )}
         >
           <Avatar className="size-8 shrink-0">
-            <AvatarImage src={user?.data?.user?.image!} />
+            {user?.data?.user?.image && (
+              <Image
+                src={user?.data?.user?.image}
+                width={100}
+                height={100}
+                alt="Logo"
+              />
+            )}
             <AvatarFallback className="bg-linear-to-br from-yellow-500 to-yellow-400 text-white text-xs font-bold">
               JD
             </AvatarFallback>

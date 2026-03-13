@@ -9,9 +9,12 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@orpc/client": "^1.13.7",
+    "@orpc/server": "^1.13.7",
     "@prisma/adapter-pg": "^7.4.2",
     "@prisma/client": "^7.4.2",
     "@t3-oss/env-nextjs": "^0.13.10",
+    "@tanstack/react-query": "^5.90.21",
     "better-auth": "^1.4.20",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -19,6 +22,7 @@
     "framer-motion": "^12.34.3",
     "lucide-react": "^0.576.0",
     "next": "16.1.6",
+    "pdf2pic": "^3.2.0",
     "pg": "^8.19.0",
     "radix-ui": "^1.4.3",
     "react": "19.2.3",
