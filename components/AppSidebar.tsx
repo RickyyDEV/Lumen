@@ -31,7 +31,7 @@ import Image from "next/image";
 const mainItems = [
   { title: "Dashboard", url: "/dashboard", icon: Home },
   { title: "Meus Resumos", url: "/dashboard/summaries", icon: FileText },
-  { title: "Novo Resumo", url: "/dashboard/upload", icon: Upload },
+  { title: "Novo Resumo", url: "/dashboard/new", icon: Upload },
 ];
 
 const bottomItems = [

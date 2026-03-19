@@ -1,20 +1,21 @@
-import { os } from "@orpc/server";
 import z from "zod";
+import { authMiddleware, base } from "../../procedure";
 
-const test = os
+const test = base
   .route({
     method: "GET",
     path: "/user",
     summary: "Test user",
   })
+  .use(authMiddleware)
   .output(
     z.object({
-      id: z.number(),
-      name: z.string(),
+      id: z.string(),
+      email: z.string(),
     }),
   )
-  .handler(async ({}) => {
-    return { id: 1, name: "asdDAS" };
+  .handler(async ({ context }) => {
+    return { id: context.user.id, email: context.user.email };
   });
 
 export const user = { test };

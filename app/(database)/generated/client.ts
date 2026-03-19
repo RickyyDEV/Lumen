@@ -61,3 +61,13 @@ export type Account = Prisma.AccountModel
  * 
  */
 export type Verification = Prisma.VerificationModel
+/**
+ * Model PdfSummary
+ * 
+ */
+export type PdfSummary = Prisma.PdfSummaryModel
+/**
+ * Model Pdf
+ * 
+ */
+export type Pdf = Prisma.PdfModel

@@ -3,6 +3,8 @@ import "server-only";
 import { headers } from "next/headers";
 import { createRouterClient } from "@orpc/server";
 import mainRouter from "../router";
+import prisma from "@/app/(database)/prisma";
+import s3Client from "@/app/s3";
 
 globalThis.$client = createRouterClient(mainRouter, {
   /**
@@ -13,6 +15,8 @@ globalThis.$client = createRouterClient(mainRouter, {
    * For per-request context, use middleware context or pass a function as the initial context.
    */
   context: async () => ({
-    headers: await headers(), // provide headers if initial context required
+    headers: await headers(),
+    s3: s3Client,
+    db: prisma,
   }),
 });

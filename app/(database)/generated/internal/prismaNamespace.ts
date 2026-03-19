@@ -80,12 +80,12 @@ export type PrismaVersion = {
 }
 
 /**
- * Prisma Client JS version: 7.4.2
- * Query Engine version: 94a226be1cf2967af2541cca5529f0f7ba866919
+ * Prisma Client JS version: 7.5.0
+ * Query Engine version: 280c870be64f457428992c43c1f6d557fab6e29e
  */
 export const prismaVersion: PrismaVersion = {
-  client: "7.4.2",
-  engine: "94a226be1cf2967af2541cca5529f0f7ba866919"
+  client: "7.5.0",
+  engine: "280c870be64f457428992c43c1f6d557fab6e29e"
 }
 
 /**
@@ -387,7 +387,9 @@ export const ModelName = {
   User: 'User',
   Session: 'Session',
   Account: 'Account',
-  Verification: 'Verification'
+  Verification: 'Verification',
+  PdfSummary: 'PdfSummary',
+  Pdf: 'Pdf'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -403,7 +405,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "session" | "account" | "verification"
+    modelProps: "user" | "session" | "account" | "verification" | "pdfSummary" | "pdf"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -703,6 +705,154 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    PdfSummary: {
+      payload: Prisma.$PdfSummaryPayload<ExtArgs>
+      fields: Prisma.PdfSummaryFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.PdfSummaryFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PdfSummaryPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.PdfSummaryFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PdfSummaryPayload>
+        }
+        findFirst: {
+          args: Prisma.PdfSummaryFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PdfSummaryPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.PdfSummaryFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PdfSummaryPayload>
+        }
+        findMany: {
+          args: Prisma.PdfSummaryFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PdfSummaryPayload>[]
+        }
+        create: {
+          args: Prisma.PdfSummaryCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PdfSummaryPayload>
+        }
+        createMany: {
+          args: Prisma.PdfSummaryCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.PdfSummaryCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PdfSummaryPayload>[]
+        }
+        delete: {
+          args: Prisma.PdfSummaryDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PdfSummaryPayload>
+        }
+        update: {
+          args: Prisma.PdfSummaryUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PdfSummaryPayload>
+        }
+        deleteMany: {
+          args: Prisma.PdfSummaryDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.PdfSummaryUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.PdfSummaryUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PdfSummaryPayload>[]
+        }
+        upsert: {
+          args: Prisma.PdfSummaryUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PdfSummaryPayload>
+        }
+        aggregate: {
+          args: Prisma.PdfSummaryAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregatePdfSummary>
+        }
+        groupBy: {
+          args: Prisma.PdfSummaryGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PdfSummaryGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.PdfSummaryCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PdfSummaryCountAggregateOutputType> | number
+        }
+      }
+    }
+    Pdf: {
+      payload: Prisma.$PdfPayload<ExtArgs>
+      fields: Prisma.PdfFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.PdfFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PdfPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.PdfFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PdfPayload>
+        }
+        findFirst: {
+          args: Prisma.PdfFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PdfPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.PdfFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PdfPayload>
+        }
+        findMany: {
+          args: Prisma.PdfFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PdfPayload>[]
+        }
+        create: {
+          args: Prisma.PdfCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PdfPayload>
+        }
+        createMany: {
+          args: Prisma.PdfCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.PdfCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PdfPayload>[]
+        }
+        delete: {
+          args: Prisma.PdfDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PdfPayload>
+        }
+        update: {
+          args: Prisma.PdfUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PdfPayload>
+        }
+        deleteMany: {
+          args: Prisma.PdfDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.PdfUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.PdfUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PdfPayload>[]
+        }
+        upsert: {
+          args: Prisma.PdfUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PdfPayload>
+        }
+        aggregate: {
+          args: Prisma.PdfAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregatePdf>
+        }
+        groupBy: {
+          args: Prisma.PdfGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PdfGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.PdfCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PdfCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -800,12 +950,54 @@ export const VerificationScalarFieldEnum = {
 export type VerificationScalarFieldEnum = (typeof VerificationScalarFieldEnum)[keyof typeof VerificationScalarFieldEnum]
 
 
+export const PdfSummaryScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  author: 'author',
+  mainTopic: 'mainTopic',
+  shortSummary: 'shortSummary',
+  detailedSummary: 'detailedSummary',
+  difficultyLevel: 'difficultyLevel',
+  readingTime: 'readingTime',
+  analysis: 'analysis',
+  userId: 'userId'
+} as const
+
+export type PdfSummaryScalarFieldEnum = (typeof PdfSummaryScalarFieldEnum)[keyof typeof PdfSummaryScalarFieldEnum]
+
+
+export const PdfScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  name: 'name',
+  length: 'length',
+  format: 'format',
+  focus: 'focus',
+  language: 'language',
+  quotes: 'quotes',
+  keywords: 'keywords',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  pdfSummaryId: 'pdfSummaryId',
+  pages: 'pages'
+} as const
+
+export type PdfScalarFieldEnum = (typeof PdfScalarFieldEnum)[keyof typeof PdfScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
 } as const
 
 export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
+
+
+export const JsonNullValueInput = {
+  JsonNull: JsonNull
+} as const
+
+export type JsonNullValueInput = (typeof JsonNullValueInput)[keyof typeof JsonNullValueInput]
 
 
 export const QueryMode = {
@@ -822,6 +1014,15 @@ export const NullsOrder = {
 } as const
 
 export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
+
+
+export const JsonNullValueFilter = {
+  DbNull: DbNull,
+  JsonNull: JsonNull,
+  AnyNull: AnyNull
+} as const
+
+export type JsonNullValueFilter = (typeof JsonNullValueFilter)[keyof typeof JsonNullValueFilter]
 
 
 
@@ -876,6 +1077,90 @@ export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'In
  * Reference to a field of type 'Int[]'
  */
 export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
+    
+
+
+/**
+ * Reference to a field of type 'Json'
+ */
+export type JsonFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Json'>
+    
+
+
+/**
+ * Reference to a field of type 'QueryMode'
+ */
+export type EnumQueryModeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'QueryMode'>
+    
+
+
+/**
+ * Reference to a field of type 'SummaryLength'
+ */
+export type EnumSummaryLengthFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'SummaryLength'>
+    
+
+
+/**
+ * Reference to a field of type 'SummaryLength[]'
+ */
+export type ListEnumSummaryLengthFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'SummaryLength[]'>
+    
+
+
+/**
+ * Reference to a field of type 'SummaryOutput'
+ */
+export type EnumSummaryOutputFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'SummaryOutput'>
+    
+
+
+/**
+ * Reference to a field of type 'SummaryOutput[]'
+ */
+export type ListEnumSummaryOutputFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'SummaryOutput[]'>
+    
+
+
+/**
+ * Reference to a field of type 'SummaryFocus'
+ */
+export type EnumSummaryFocusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'SummaryFocus'>
+    
+
+
+/**
+ * Reference to a field of type 'SummaryFocus[]'
+ */
+export type ListEnumSummaryFocusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'SummaryFocus[]'>
+    
+
+
+/**
+ * Reference to a field of type 'SummaryLanguage'
+ */
+export type EnumSummaryLanguageFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'SummaryLanguage'>
+    
+
+
+/**
+ * Reference to a field of type 'SummaryLanguage[]'
+ */
+export type ListEnumSummaryLanguageFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'SummaryLanguage[]'>
+    
+
+
+/**
+ * Reference to a field of type 'Float'
+ */
+export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
+    
+
+
+/**
+ * Reference to a field of type 'Float[]'
+ */
+export type ListFloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float[]'>
     
 
 /**
@@ -977,6 +1262,8 @@ export type GlobalOmitConfig = {
   session?: Prisma.SessionOmit
   account?: Prisma.AccountOmit
   verification?: Prisma.VerificationOmit
+  pdfSummary?: Prisma.PdfSummaryOmit
+  pdf?: Prisma.PdfOmit
 }
 
 /* Types for Logging */

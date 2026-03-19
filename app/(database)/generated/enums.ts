@@ -9,7 +9,38 @@
 * 🟢 You can import this file directly.
 */
 
+export const SummaryLength = {
+  curto: 'curto',
+  medio: 'medio',
+  detalhado: 'detalhado'
+} as const
+
+export type SummaryLength = (typeof SummaryLength)[keyof typeof SummaryLength]
 
 
-// This file is empty because there are no enums in the schema.
-export {}
+export const SummaryOutput = {
+  paragrafos: 'paragrafos',
+  topicos: 'topicos',
+  estruturado: 'estruturado'
+} as const
+
+export type SummaryOutput = (typeof SummaryOutput)[keyof typeof SummaryOutput]
+
+
+export const SummaryFocus = {
+  geral: 'geral',
+  tecnico: 'tecnico',
+  academico: 'academico',
+  negocios: 'negocios'
+} as const
+
+export type SummaryFocus = (typeof SummaryFocus)[keyof typeof SummaryFocus]
+
+
+export const SummaryLanguage = {
+  pt: 'pt',
+  en: 'en',
+  es: 'es'
+} as const
+
+export type SummaryLanguage = (typeof SummaryLanguage)[keyof typeof SummaryLanguage]

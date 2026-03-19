@@ -54,7 +54,9 @@ export const ModelName = {
   User: 'User',
   Session: 'Session',
   Account: 'Account',
-  Verification: 'Verification'
+  Verification: 'Verification',
+  PdfSummary: 'PdfSummary',
+  Pdf: 'Pdf'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -131,12 +133,54 @@ export const VerificationScalarFieldEnum = {
 export type VerificationScalarFieldEnum = (typeof VerificationScalarFieldEnum)[keyof typeof VerificationScalarFieldEnum]
 
 
+export const PdfSummaryScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  author: 'author',
+  mainTopic: 'mainTopic',
+  shortSummary: 'shortSummary',
+  detailedSummary: 'detailedSummary',
+  difficultyLevel: 'difficultyLevel',
+  readingTime: 'readingTime',
+  analysis: 'analysis',
+  userId: 'userId'
+} as const
+
+export type PdfSummaryScalarFieldEnum = (typeof PdfSummaryScalarFieldEnum)[keyof typeof PdfSummaryScalarFieldEnum]
+
+
+export const PdfScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  name: 'name',
+  length: 'length',
+  format: 'format',
+  focus: 'focus',
+  language: 'language',
+  quotes: 'quotes',
+  keywords: 'keywords',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  pdfSummaryId: 'pdfSummaryId',
+  pages: 'pages'
+} as const
+
+export type PdfScalarFieldEnum = (typeof PdfScalarFieldEnum)[keyof typeof PdfScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
 } as const
 
 export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
+
+
+export const JsonNullValueInput = {
+  JsonNull: JsonNull
+} as const
+
+export type JsonNullValueInput = (typeof JsonNullValueInput)[keyof typeof JsonNullValueInput]
 
 
 export const QueryMode = {
@@ -153,4 +197,13 @@ export const NullsOrder = {
 } as const
 
 export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
+
+
+export const JsonNullValueFilter = {
+  DbNull: DbNull,
+  JsonNull: JsonNull,
+  AnyNull: AnyNull
+} as const
+
+export type JsonNullValueFilter = (typeof JsonNullValueFilter)[keyof typeof JsonNullValueFilter]
 

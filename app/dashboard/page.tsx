@@ -264,7 +264,7 @@ const Dashboard = () => {
         >
           <Card
             className="group relative overflow-hidden border-border/40 bg-card/60 backdrop-blur-sm cursor-pointer"
-            onClick={() => redirect("/dashboard/upload")}
+            onClick={() => redirect("/dashboard/new")}
           >
             <div className="absolute inset-0 bg-linear-to-br from-yellow-500/5 to-yellow-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <CardContent className="relative p-6 flex flex-col items-center text-center">
