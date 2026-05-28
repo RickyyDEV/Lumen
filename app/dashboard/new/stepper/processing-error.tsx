@@ -4,8 +4,6 @@ import {
   AlertTriangle,
   RefreshCw,
   ArrowLeft,
-  FileWarning,
-  HelpCircle,
   Copy,
   ChevronDown,
   XCircleIcon,
@@ -22,11 +20,9 @@ import { useStepper } from ".";
 export default function ProcessingError({
   errorStep,
   error,
-  errorType,
 }: {
   errorStep: number;
   error: InstanceType<typeof ORPCError>;
-  errorType: string;
 }) {
   const [showDetails, setShowDetails] = useState(false);
   const methods = useFormContext();
